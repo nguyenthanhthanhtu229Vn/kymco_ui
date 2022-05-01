@@ -1,0 +1,76 @@
+/* FONT FACE - font-display: fallback; */
+
+
+/* FONT FACE - font-display: fallback; */
+
+@font-face {
+    font-family: 'uab';
+    src: url('../fonts/UTMAvoBold.woff2') format('woff2'), url('../fonts/UTMAvoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sfu';
+    src: url('../fonts/SFUDINEngAlt.woff2') format('woff2'), url('../fonts/SFUDINEngAlt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'ua';
+    src: url('../fonts/UTMAvo.woff2') format('woff2'), url('../fonts/UTMAvo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'sful';
+    src: url('../fonts/SFUDINLight.woff2') format('woff2'), url('../fonts/SFUDINLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dl';
+    src: url('../fonts/DIN-Light.woff2') format('woff2'), url('../fonts/DIN-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dm';
+    src: url('../fonts/DIN-Medium.woff2') format('woff2'), url('../fonts/DIN-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dr';
+    src: url('../fonts/DIN-Regular.woff2') format('woff2'), url('../fonts/DIN-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'dba';
+    src: url('../fonts/DIN-BlackAlternate.woff2') format('woff2'), url('../fonts/DIN-BlackAlternate.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'db';
+    src: url('../fonts/DIN-Bold.woff2') format('woff2'), url('../fonts/DIN-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}

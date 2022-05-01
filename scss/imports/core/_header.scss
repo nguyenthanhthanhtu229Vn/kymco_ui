@@ -1,0 +1,257 @@
+// css header
+// css header
+header {
+    --heightHeader: 90px;
+    width: 100%;
+    height: var(--heightHeader);
+    position: fixed;
+    @include transition(0.5s);
+    left: 0;
+    top: 0;
+    z-index: 100;
+    text-transform: uppercase;
+    .container-fluid {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            z-index: 300;
+            .hidden {
+                display: none;
+            }
+        }
+        .menu {
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            li {
+                height: 100%;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    margin: 0 25px;
+                    transition: 0.5s cubic-bezier(.17, .67, .6, .8);
+                    color: $white-cl;
+                    font-size: 16px;
+                    line-height: 21, 37px;
+                    letter-spacing: 0.64px;
+                    position: relative;
+                    overflow: hidden;
+                    &:after {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background: $red-cll;
+                        position: absolute;
+                        left: 0;
+                        bottom: 25px;
+                        @include transform(scaleX(0));
+                        @include transform-origin(left center);
+                        transition: 0.5s cubic-bezier(.17, .67, .6, .8);
+                    }
+                    &:hover,
+                    &.active {
+                        color: $red-cll;
+                        &:after {
+                            @include transform(scaleX(1));
+                            @include transform-origin(right center);
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            .search {
+                margin-right: 15px;
+                z-index: 10;
+                img {
+                    cursor: pointer;
+                    height: 20px;
+                    filter: invert(100%);
+                }
+            }
+            &__link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                &-a {
+                    padding: 5px 15px;
+                    background-color: $red-cll;
+                    color: $white-cl;
+                    border-radius: 3px;
+                    @include transition(0.5s);
+                    &:hover {
+                        @include transition(0.5s);
+                        filter: grayscale(40%);
+                        -webkit-filter: grayscale(40%);
+                        -moz-filter: grayscale(40%);
+                    }
+                }
+                &-a:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+            .btn__menu {
+                display: none;
+                margin-left: 10px;
+                width: 40px;
+                height: 22px;
+                position: relative;
+                z-index: 300;
+                cursor: pointer;
+                @include transition(0.5s);
+                span {
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background-color: $white-cl;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: 0.5s;
+                    @include transition(0.3);
+                }
+                &::before,
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background-color: $white-cl;
+                    transform: translateY(0);
+                    @include transition(0.3);
+                }
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                }
+                &.clicked {
+                    &::before {
+                        // @include transform(rotate(45deg) translate(6px, 8px));
+                        transform: rotate(45deg) translate(6px, 6px);
+                        @include transition(0.3);
+                    }
+                    span {
+                        opacity: 0;
+                    }
+                    &::after {
+                        // @include transform(rotate(-45deg) translate(4px, -8px));
+                        transform: rotate(-45deg) translate(6px, -9px);
+                        @include transition(0.3);
+                    }
+                }
+            }
+        }
+        .nav {
+            display: none;
+            @include transition(0.5s);
+            opacity: 0;
+            top: -100%;
+            left: 0;
+            &.active {
+                left: 0;
+                top: 0;
+                opacity: 100%;
+            }
+        }
+    }
+    &.active {
+        background-color: $black-bg-cl;
+        @include transition(0.5s);
+    }
+    @include md {
+        .container-fluid {
+            font-size: 14px;
+            .menu {
+                li {
+                    a {
+                        font-size: 14px;
+                        margin: 0 15px;
+                    }
+                }
+            }
+            .right {
+                .search {
+                    margin-right: 10px;
+                    img {
+                        height: 20px;
+                    }
+                }
+                &__link {
+                    &-a {
+                        padding: 5px 8px;
+                    }
+                    &-a:not(:last-child) {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include sm {
+        --heightHeader: 60px;
+        .container-fluid {
+            .menu {
+                display: none;
+            }
+            .right {
+                .search {
+                    // display: none;
+                    img {
+                        height: 30px;
+                    }
+                }
+                .right__link {
+                    display: none;
+                }
+                .btn__menu {
+                    display: block;
+                }
+            }
+            .nav {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                background: $black-cl;
+                position: fixed;
+                // top: 0;
+                left: 0;
+                opacity: 1;
+                @include transition(0.5s);
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: $black-cl;
+                    @include transition(0.5s);
+                    li {
+                        color: $black-cl;
+                        margin: 0 auto;
+                        height: 80px;
+                        z-index: 300;
+                        width: 290px;
+                        transition: 0.5s;
+                        a {
+                            color: $black-cl;
+                            padding: 20px;
+                            color: $white-cl;
+                            text-align: center;
+                            @include transition(0.5s);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

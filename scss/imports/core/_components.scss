@@ -1,0 +1,151 @@
+// css components
+// css components
+.content {
+    position: relative;
+    height: 450px;
+    width: 475px;
+    z-index: 10;
+    left: 0;
+    &__text {
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        @include transition(1s);
+        &-title {
+            min-width: 100%;
+            font-family: 'sfu';
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2.4px;
+        }
+        &-des {
+            min-width: 100%;
+            font-size: 22px;
+            font-weight: normal;
+            letter-spacing: 0.88px;
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            @include transition(1s);
+        }
+        &.center {
+            opacity: 1;
+            visibility: visible;
+            position: initial;
+            text-align: center;
+            transform: translateY(0%);
+        }
+        &.left {
+            opacity: 1;
+            visibility: visible;
+            position: initial;
+            transform: translateY(0%);
+        }
+    }
+    @include sm {
+        &__text {
+            &-title {
+                font-size: 48px;
+            }
+            &-des {
+                font-size: 18px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 25px;
+    &__item {
+        border: 1px solid #ccc;
+        &-img {
+            position: relative;
+            overflow: hidden;
+            height: 0;
+            padding-bottom: 100%;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+                object-fit: cover;
+                min-width: 100%;
+                min-height: 100%;
+                @include transition(0.5s);
+            }
+            &:hover {
+                img {
+                    transform: translate(-50%, -50%) scale(1.1);
+                    @include transition(0.5s);
+                }
+            }
+        }
+        &-text {
+            padding: 20px;
+            text-align: center;
+            .title {
+                font-family: "sfu";
+                text-transform: uppercase;
+                font-size: 35px;
+                letter-spacing: 0.4px;
+                line-height: initial;
+                font-weight: bold;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                a {
+                    @include transition(0.5s);
+                    color: $black-cl;
+                }
+                &:hover {
+                    a {
+                        color: $red-cll;
+                        @include transition(0.5s);
+                    }
+                }
+            }
+            .desc {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                font-size: 16px;
+                height: 65px;
+            }
+            .link {
+                display: block;
+                color: $black-cl;
+                text-decoration: underline;
+                font-weight: bold;
+                font-size: 16px;
+                margin-top: 25px;
+                @include transition(0.5s);
+                &:hover {
+                    color: $red-cll;
+                    @include transition(0.5s);
+                }
+            }
+        }
+    }
+    @include sm {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}

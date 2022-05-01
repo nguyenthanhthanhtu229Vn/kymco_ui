@@ -1,0 +1,47 @@
+// css button, title, icon, elements...
+// css button, title, icon, elements...
+.btn-main {
+    display: block;
+    background-color: $red-cll;
+    color: $white-cl;
+    font-family: "sfu";
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: max-content;
+    &.small {
+        font-size: 11.2px;
+        letter-spacing: 0.44px;
+        padding: 6px 15px;
+        &.mid {
+            font-size: 14px;
+        }
+    }
+    &.center {
+        margin: 80px auto 0px auto;
+    }
+    padding: 10px 45px;
+    border-radius: 25px;
+    @include transition(0.5s);
+    &:hover {
+        @include transition(0.5s);
+        filter: grayscale(40%);
+        -webkit-filter: grayscale(40%);
+        -moz-filter: grayscale(40%);
+    }
+    @include sm {
+        &.small {
+            font-size: 10px;
+            letter-spacing: 0.44px;
+            padding: 5px 14px;
+            &.mid {
+                font-size: 12px;
+            }
+        }
+        &.center {
+            margin: 60px auto 0px auto;
+        }
+        padding: 8px 35px;
+    }
+}
